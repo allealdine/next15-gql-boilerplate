@@ -1,0 +1,50 @@
+{
+  "Common": {
+    "welcome": "Selamat datang!"
+  },
+  "Error": {
+    "description": "<p>Kami mengalami kesalahan.</p><p>Anda dapat mencoba untuk <retry>memuat ulang halaman</retry> yang sedang Anda kunjungi.</p>",
+    "title": "Terjadi kesalahan!"
+  },
+  "IndexPage": {
+    "description": "Ini adalah contoh dasar yang menunjukkan penggunaan <code>next-intl</code> dengan Next.js App Router. Cobalah mengubah lokal di pojok kanan atas dan lihat bagaimana kontennya berubah.",
+    "title": "Contoh next-intl",
+    "getStarted": "Ayo Mulai"
+  },
+  "LocaleLayout": {
+    "title": "Contoh next-intl"
+  },
+  "LocaleSwitcher": {
+    "label": "Ganti bahasa",
+    "locale": "{locale, select, id {🇩🇪 Indonesia} en {🇺🇸 Inggris} other {Tidak Dikenal}}"
+  },
+  "Manifest": {
+    "name": "Contoh next-intl"
+  },
+  "Navigation": {
+    "home": "Beranda",
+    "pathnames": "Nama Jalur"
+  },
+  "NotFoundPage": {
+    "description": "Silakan periksa kembali bilah alamat browser atau gunakan navigasi untuk menuju ke halaman yang diketahui.",
+    "title": "Halaman tidak ditemukan"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Pelajari lebih lanjut tentang next-intl di dokumentasi resmi.",
+        "href": "https://next-intl.dev",
+        "title": "Dokumentasi"
+      },
+      "source": {
+        "description": "Lihat kode sumber contoh ini di GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Kode sumber"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Nama jalur juga di-internasionalisasi.</p><p>Jika Anda menggunakan bahasa default Inggris, Anda akan melihat <code>/en/pathnames</code> di bilah alamat browser di halaman ini.</p><p>Jika Anda mengganti lokal ke Jerman, URL-nya akan diubah sesuai lokal (<code>/de/pfadnamen</code>).</p>",
+    "title": "Nama Jalur"
+  }
+}

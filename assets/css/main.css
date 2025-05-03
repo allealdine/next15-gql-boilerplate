@@ -1,0 +1,444 @@
+@import 'tailwindcss';
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 490px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 2100px;
+
+  --z-index--1: -1;
+
+  --font-body: system-ui, sans-serif;
+  --font-heading: system-ui, sans-serif;
+
+  --text-10px: 0.625rem;
+  --text-h1: var(--h1);
+  --text-h2: var(--h2);
+  --text-h3: var(--h3);
+  --text-h4: var(--h4);
+  --text-h5: var(--h5);
+  --text-h6: var(--h6);
+
+  --color-social-facebook: #3b5998;
+  --color-social-facebook-hover: #35508a;
+  --color-social-twitter: #1da1f2;
+  --color-social-instagram: #e1306c;
+  --color-social-youtube: #ff0000;
+  --color-social-google: #4285f4;
+  --color-social-google-hover: #3574de;
+
+  --min-height-6: 2.5rem;
+  --min-height-40: 10rem;
+  --min-height-140: 35rem;
+  --min-height-580: 580px;
+
+  --height-13: 3.125rem;
+  --height-22: 5.25rem;
+  --height-4_5: 1.125rem;
+  --height-double: 200%;
+
+  --max-height-140: 35rem;
+  --max-height-70vh: 70vh;
+  --max-height-85vh: 85vh;
+
+  --container-1920: 1920px;
+
+  --min-width-150: 150px;
+
+  --radius: 5px;
+
+  --inset-22: 5.25rem;
+
+  --stroke-width-2_5: 2.5;
+
+  --shadow-200: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+  --shadow-300: rgba(0, 0, 0, 0.16) 0px 0px 6px;
+  --shadow-350: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+  --shadow-400: rgba(0, 0, 0, 0.1) 0px 0px 8px 0;
+  --shadow-500: rgba(0, 0, 0, 0.17) 0px 0px 12px;
+  --shadow-600: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  --shadow-700: rgba(0, 0, 0, 0.08) 0px 2px 16px;
+  --shadow-900: rgba(0, 0, 0, 0.05) 0px 21px 36px;
+  --shadow-downfall: rgba(0, 0, 0, 0.14) 0px 6px 12px;
+  --shadow-payment-card: 0px 2px 6px rgba(59, 74, 92, 0.1);
+  --shadow-downfall-xs: rgba(0, 0, 0, 0.14) 0px 1px 2px;
+  --shadow-downfall-sm: rgba(0, 0, 0, 0.14) 0px 2px 4px;
+  --shadow-downfall-lg: rgba(0, 0, 0, 0.16) 0px 8px 16px;
+  --shadow-card-action:
+    0 0 0 1px #8898aa1a, 0 15px 35px #31315d1a, 0 5px 15px #00000014;
+  --shadow-news-ticker: rgba(67, 99, 136, 0.04) 0px 6px 15px 0px;
+  --shadow-collapse: rgba(187, 199, 206, 0.25) 0px 2px 6px 0px;
+  --shadow-guideline: rgba(66, 76, 84, 0.03) 0px 2px 6px 0px;
+
+  --transition-property-height: height;
+
+  --ease-in-expo: cubic-bezier(0.04, 0.62, 0.23, 0.98);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer base {
+  :root {
+    /*
+    *
+    * This all are the rgb values which are used inside the
+    * tailwind config file and custom plugins css file
+    *
+    */
+
+    /*
+    * primary color
+    */
+    --color-accent: 0, 159, 127;
+
+    /*
+    * Hover state color of primary color
+    */
+    --color-accent-hover: 1, 147, 118;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-200: 204, 236, 229;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-300: 153, 217, 204;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-400: 77, 188, 165;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-500: 0, 159, 127;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-600: 0, 143, 114;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-700: 0, 119, 95;
+
+    /*
+    * light color
+    */
+    --color-light: 255, 255, 255;
+
+    /*
+    * dark color
+    */
+    --color-dark: 0, 0, 0;
+
+    /*
+    * Black muted color
+    */
+    --color-muted-black: 17, 17, 17;
+
+    /*
+    * Current color
+    */
+    --color-current: currentColor;
+
+    /*
+    *
+    * TEXT colors
+    *
+    */
+
+    /*
+    * text color used for body/base text -> gray-500
+    */
+    --text-base: 107, 114, 128;
+
+    /*
+    * dark base text color  -> gray-600
+    */
+    --text-base-dark: 75, 85, 99;
+
+    /*
+    * muted text color -> gray-400
+    */
+    --text-muted: 156, 163, 175;
+
+    /*
+    * light muted text color - gray-300
+    */
+    --text-muted-light: 209, 213, 219;
+
+    /*
+    * text color used for heading text -> gray-700
+    */
+    --text-sub-heading: 55, 65, 81;
+
+    /*
+    * text color used for heading text -> gray-800
+    */
+    --text-heading: 31, 41, 55;
+
+    /*
+    * text color used for heading text -> gray-900
+    */
+    --text-bolder: 31, 41, 55;
+
+    /*
+    *
+    * border colors
+    *
+    */
+
+    /*
+    * border color 50
+    */
+    --color-border-50: 249, 250, 251;
+
+    /*
+    * border color 100
+    */
+    --color-border-100: 243, 244, 246;
+
+    /*
+    * border color 200
+    */
+    --color-border-200: 229, 231, 235;
+
+    /*
+    * border base color which is 300
+    */
+    --color-border-base: 209, 213, 219;
+
+    /*
+    * border color 400
+    */
+    --color-border-400: 156, 163, 175;
+
+    /*
+    *
+    * Tailwind default gray color override
+    *
+    */
+
+    /*
+    * gray-50
+    */
+    --color-gray-50: 249, 250, 251;
+
+    /*
+    * gray-100
+    */
+    --color-gray-100: 243, 244, 246;
+
+    /*
+    * gray-200
+    */
+    --color-gray-200: 229, 231, 235;
+
+    /*
+    * gray-300
+    */
+    --color-gray-300: 209, 213, 219;
+
+    /*
+    * gray-400
+    */
+    --color-gray-400: 156, 163, 175;
+
+    /*
+    * gray-500
+    */
+    --color-gray-500: 107, 114, 128;
+
+    /*
+    * gray-600
+    */
+    --color-gray-600: 75, 85, 99;
+
+    /*
+    * gray-700
+    */
+    --color-gray-700: 55, 65, 81;
+
+    /*
+    * gray-800
+    */
+    --color-gray-800: 31, 41, 55;
+
+    /*
+    * gray-900
+    */
+    --color-gray-900: 31, 41, 55;
+
+    /*
+    * orange-50
+    */
+    --color-orange-50: 255, 247, 237;
+
+    /*
+    * orange-100
+    */
+    --color-orange-100: 255, 237, 213;
+
+    /*
+    * orange-200
+    */
+    --color-orange-200: 254, 215, 170;
+
+    /*
+    * orange-300
+    */
+    --color-orange-300: 253, 186, 116;
+
+    /*
+    * orange-400
+    */
+    --color-orange-400: 251, 146, 60;
+
+    /*
+    * orange-500
+    */
+    --color-orange-500: 249, 115, 22;
+
+    /*
+    * orange-600
+    */
+    --color-orange-600: 234, 88, 12;
+
+    /*
+    * orange-700
+    */
+    --color-orange-700: 194, 65, 12;
+
+    /*
+    * orange-800
+    */
+    --color-orange-800: 154, 52, 18;
+
+    /*
+    * orange-900
+    */
+    --color-orange-900: 124, 45, 18;
+
+    /*
+    Pending
+    */
+    --color-pending: 201, 161, 22;
+
+    /*
+    Processing
+    */
+    --color-processing: 158, 117, 0;
+
+    /*
+    Complete
+    */
+    --color-complete: 0, 161, 127;
+
+    /*
+    Canceled
+    */
+    --color-canceled: 227, 110, 1;
+
+    /*
+    Failed
+    */
+    --color-failed: 238, 43, 0;
+
+    /*
+    Out for delivery
+    */
+    --color-out-for-delivery: 126, 173, 66;
+
+    /*
+    * dark base text color  -> gray-600
+    */
+    --text-base-dark: 51, 51, 51;
+
+    /*
+    40px base 16px
+    */
+    --h1: 2.5rem;
+
+    /*
+    32px base 16px
+    */
+    --h2: 2rem;
+
+    /*
+    24px base 16px
+    */
+    --h3: 1.5rem;
+
+    /*
+    20px base 16px
+    */
+    --h4: 1.25rem;
+
+    /*
+    18px base 16px
+    */
+    --h5: 1.125rem;
+
+    /*
+    16px base 16px
+    */
+    --h6: 1rem;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply no-underline;
+  }
+  .border-border-base {
+    border: 1px solid red;
+  }
+}
+.bg-light {
+  background-color: rgba(var(--color-light), 1);
+}
+.border-border-200 {
+  border-color: rgba(var(--color-border-200), 1);
+}
